@@ -1,0 +1,15 @@
+<launch>
+    <!--在參數服務器載入 urdf 文件-->
+    <param name="robot_description" command="$(find xacro)/xacro $(find urdf01_rviz)/urdf/xacro/car.urdf.xacro"/>
+    <!--啟動rviz-->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find urdf01_rviz)/config/showmycar.rviz" />
+    <!-- 關節狀態發布器 -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+    <!-- 機器人狀態發布器 -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <!-- 集成arbotix運動控制節點, 並加載參數-->
+    <node name="arbotix" pkg="arbotix_python" type="arbotix_driver"  output="screen">
+        <rosparam file="$(find urdf01_rviz)/config/control.yaml" command="load"/>
+        <param  name="sim" value="true"/>
+    </node>
+</launch>

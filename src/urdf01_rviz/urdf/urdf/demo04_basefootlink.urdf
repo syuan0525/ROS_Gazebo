@@ -1,0 +1,61 @@
+
+<robot name="mycar">
+
+ <!-- footlink -->
+    <link name="base_footlink">
+        <visual>
+            <geometry>
+                <box size="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+    </link>
+
+    <!-- 底盘 -->
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="0.3 0.2 0.1" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <material name="car_color">
+                <color rgba="0.8 0.5 0 0.5" />
+            </material>
+        </visual>
+    </link>
+
+    <!-- 摄像头 -->
+    <link name="camera">
+        <visual>
+            <geometry>
+                <box size="0.02 0.05 0.05" />
+            </geometry>
+            <origin xyz="0 0 0.025" rpy="0 0 0" />
+            <material name="camera_color">
+                <color rgba="0 0 1 0.5" />
+            </material>
+        </visual>
+    </link>
+
+<!-- footlink -->
+    <joint name="footlink2base" type="fixed">
+        <!-- 父級link -->
+        <parent link="base_footlink"/>
+        <!-- 子級link -->
+        <child link="base_link" />
+        <!-- 需要计算两个 link 的物理中心之间的偏移量 -->
+        <origin xyz="0 0 0.05" rpy="0 0 0" />
+    </joint>
+
+    <!-- 关节 -->
+    <joint name="camera2baselink" type="continuous">
+        <!-- 父級link -->
+        <parent link="base_link"/>
+        <!-- 子級link -->
+        <child link="camera" />
+        <!-- 需要计算两个 link 的物理中心之间的偏移量 -->
+        <origin xyz="0.12 0 0.05" rpy="0 0 0" />
+        <!-- 旋转轴 -->
+        <axis xyz="0 0 1" />
+    </joint>
+
+</robot>
