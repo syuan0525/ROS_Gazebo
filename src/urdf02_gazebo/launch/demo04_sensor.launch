@@ -1,0 +1,8 @@
+<launch>
+    <!--啟動rviz-->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find urdf01_rviz)/config/showmycar.rviz" />
+    <!-- 關節狀態發布器 -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+    <!-- 機器人狀態發布器 -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+</launch>
