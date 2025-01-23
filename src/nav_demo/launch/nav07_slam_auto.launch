@@ -1,0 +1,9 @@
+<!-- 集成SLAM與導航, 實現機器人自主移動的地圖構件 -->
+
+<launch>
+    <!-- SLAM實現 -->
+    <include file="$(find nav_demo)/launch/nav01_slam.launch"/>
+    <!-- 導航中的move_base -->
+    <include file="$(find nav_demo)/launch/nav05_path.launch"/>
+
+</launch>
