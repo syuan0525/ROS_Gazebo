@@ -1,0 +1,8 @@
+# 目標數據變量
+int32 num
+---
+# 最終響應變量
+int32 result
+---
+# 連續反饋變量
+float64 progress_bar
