@@ -6,7 +6,8 @@
                 "${workspaceFolder}/**",
                 "/opt/ros/noetic/include",
                 "${workspaceFolder}/src/**",
-                "/home/syuan/ROS_Gazebo/devel/include"
+                // "/home/syuan/ROS_Gazebo/devel/include",
+                "/home/pmcl-001/ROS_Gazebo/src/demo03_plugin/include/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",

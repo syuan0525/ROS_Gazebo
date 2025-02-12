@@ -1,0 +1,16 @@
+<!--
+    需要定位動態連結庫
+    聲明子類與父類
+-->
+
+<library path="lib/libplus">
+  <!-- type="插件类" base_class_type="基类" -->
+  <class type="dbx_plugins_ns::SanBian" base_class_type="dbx_base_ns::Dbx_Base">
+    <!-- 描述信息 -->
+    <description>這是正三邊形插件</description>
+  </class>
+  <class type="dbx_plugins_ns::SiBian" base_class_type="dbx_base_ns::Dbx_Base">
+    <!-- 描述信息 -->
+    <description>這是正四邊形插件</description>
+  </class>
+</library>
